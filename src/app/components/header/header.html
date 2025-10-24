@@ -18,11 +18,47 @@
         <a (click)="scrollToSection('contacto')" class="nav-link">Contacto</a>
       </div>
 
-      <!-- CTA Button -->
-      <div class="nav-cta">
-        <a (click)="scrollToSection('caracteristicas')" class="btn-primary">
-          Descargar Gratis
-        </a>
+      <!-- Right Side: Theme Toggle + CTA -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button
+          class="theme-toggle"
+          (click)="toggleTheme()"
+          [attr.aria-label]="isDarkMode() ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'">
+          <!-- Sun Icon (Light Mode) -->
+          <svg
+            *ngIf="isDarkMode()"
+            class="theme-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <!-- Moon Icon (Dark Mode) -->
+          <svg
+            *ngIf="!isDarkMode()"
+            class="theme-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+
+        <!-- CTA Button -->
+        <div class="nav-cta">
+          <a (click)="scrollToSection('caracteristicas')" class="btn-primary">
+            Descargar Gratis
+          </a>
+        </div>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -57,6 +93,38 @@
       <a (click)="scrollToSection('beneficios')" class="mobile-link">Beneficios</a>
       <a (click)="scrollToSection('precios')" class="mobile-link">Precios</a>
       <a (click)="scrollToSection('contacto')" class="mobile-link">Contacto</a>
+
+      <!-- Theme Toggle in Mobile -->
+      <button
+        class="mobile-theme-toggle"
+        (click)="toggleTheme()">
+        <svg
+          *ngIf="isDarkMode()"
+          class="theme-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <svg
+          *ngIf="!isDarkMode()"
+          class="theme-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+        <span>{{ isDarkMode() ? 'Tema Claro' : 'Tema Oscuro' }}</span>
+      </button>
+
       <a (click)="scrollToSection('caracteristicas')" class="btn-primary mobile-cta">
         Descargar Gratis
       </a>

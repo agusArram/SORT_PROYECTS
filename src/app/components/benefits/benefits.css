@@ -1,6 +1,6 @@
 .benefits {
   padding: 6rem 1.5rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+  background: var(--bg-primary);
 }
 
 .benefits-container {
@@ -17,13 +17,13 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   font-family: 'Inter Tight', sans-serif;
 }
 
 .title-gradient {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -32,7 +32,7 @@
 .section-subtitle {
   font-size: 1.2rem;
   line-height: 1.7;
-  color: #64748b;
+  color: var(--text-secondary);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -45,28 +45,31 @@
 }
 
 .benefit-card {
-  background: white;
+  background: var(--bg-card);
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
   text-align: center;
+  border: 1px solid var(--border-default);
 }
 
 .benefit-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 30px var(--accent-glow);
+  border-color: var(--accent-primary);
 }
 
 .benefit-icon {
   font-size: 4rem;
   margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 15px rgba(0, 217, 255, 0.3));
 }
 
 .benefit-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   font-family: 'Inter Tight', sans-serif;
 }
@@ -74,7 +77,7 @@
 .benefit-description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #64748b;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -87,22 +90,23 @@
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text-primary);
   margin-bottom: 2rem;
   font-family: 'Inter Tight', sans-serif;
 }
 
 .comparison-table {
-  background: white;
+  background: var(--bg-card);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-strong);
 }
 
 .comparison-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-default);
 }
 
 .comparison-row:last-child {
@@ -110,32 +114,36 @@
 }
 
 .comparison-row.header {
-  background: #f8fafc;
+  background: var(--bg-elevated);
 }
 
 .comparison-cell {
   padding: 1.5rem 1rem;
   text-align: center;
   font-weight: 500;
-  color: #475569;
+  color: var(--text-secondary);
 }
 
 .comparison-cell.feature {
   text-align: left;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--text-primary);
 }
 
 .comparison-cell.highlight {
-  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-  color: #1e40af;
+  background: rgba(0, 217, 255, 0.1);
+  color: var(--accent-primary);
   font-weight: 700;
 }
 
 .comparison-row.header .comparison-cell {
   font-weight: 700;
-  color: #0f172a;
+  color: var(--text-primary);
   font-size: 1.1rem;
+}
+
+.comparison-row.header .comparison-cell.highlight {
+  color: var(--accent-primary);
 }
 
 /* Responsive */
@@ -151,7 +159,7 @@
   }
 
   .comparison-cell.feature {
-    background: #f8fafc;
+    background: var(--bg-elevated);
     font-weight: 700;
     border-bottom: none;
   }

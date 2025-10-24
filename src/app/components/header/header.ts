@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal, OnInit, effect, Renderer2, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +8,34 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   protected readonly isMenuOpen = signal(false);
+  protected readonly isDarkMode = signal(false);
+
+  constructor(
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    // Efecto para aplicar el tema cuando cambia
+    effect(() => {
+      const theme = this.isDarkMode() ? 'dark' : 'light';
+      this.renderer.setAttribute(this.document.documentElement, 'data-theme', theme);
+      localStorage.setItem('theme', theme);
+    });
+  }
+
+  ngOnInit(): void {
+    // Cargar preferencia guardada o detectar preferencia del sistema
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    this.isDarkMode.set(initialTheme === 'dark');
+  }
+
+  toggleTheme(): void {
+    this.isDarkMode.update(value => !value);
+  }
 
   toggleMenu(): void {
     this.isMenuOpen.update(value => !value);

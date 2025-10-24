@@ -1,6 +1,68 @@
 /* ==========================================================================
-   Global Styles - Sort Proyects
+   Global Styles - Sort Proyects (Dual Theme System)
    ========================================================================== */
+
+/* CSS Variables - Light Theme (Default)
+   ========================================================================== */
+:root {
+  /* Fondos Light */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-elevated: #f1f5f9;
+
+  /* Acento Azul */
+  --accent-primary: #3b82f6;
+  --accent-primary-dark: #2563eb;
+  --accent-primary-light: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+
+  /* Texto Light */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  /* Bordes Light */
+  --border-default: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.15);
+
+  /* Sombras Light */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-accent: 0 0 20px var(--accent-glow);
+}
+
+/* Dark Theme Variables
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Fondos Dark */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #1e1e1e;
+  --bg-elevated: #252525;
+
+  /* Acento Celeste Brillante */
+  --accent-primary: #00d9ff;
+  --accent-primary-dark: #00b8db;
+  --accent-primary-light: #33e3ff;
+  --accent-glow: rgba(0, 217, 255, 0.4);
+
+  /* Texto Dark */
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  /* Bordes Dark */
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  /* Sombras Dark */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 20px var(--accent-glow);
+}
 
 /* CSS Reset & Base Styles
    ========================================================================== */
@@ -26,9 +88,10 @@ body {
     sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #ffffff;
+  color: var(--text-primary);
+  background: var(--bg-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography
@@ -37,11 +100,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 700;
   line-height: 1.2;
-  color: #0f172a;
+  color: var(--text-primary);
 }
 
 p {
   margin: 0;
+  color: var(--text-secondary);
 }
 
 a {
@@ -84,34 +148,34 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: var(--accent-primary);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: var(--accent-primary-dark);
 }
 
 /* Selection
    ========================================================================== */
 ::selection {
-  background: #3b82f6;
-  color: white;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
 }
 
 ::-moz-selection {
-  background: #3b82f6;
-  color: white;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
 }
 
 /* Focus Styles
    ========================================================================== */
 *:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
 }
 
@@ -119,7 +183,7 @@ button {
   outline: none;
 }
 
-/* Loading State (Optional)
+/* Animations
    ========================================================================== */
 @keyframes fadeIn {
   from {
@@ -129,6 +193,15 @@ button {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--accent-glow);
   }
 }
 
