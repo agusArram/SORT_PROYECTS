@@ -18,7 +18,7 @@
 
     <!-- Features Grid -->
     <div class="features-grid">
-      <div
+      <article
         *ngFor="let feature of features"
         class="feature-card"
         [class.star-feature]="feature.isStarFeature">
@@ -44,7 +44,7 @@
             <span>{{ feature.benefit }}</span>
           </div>
         </div>
-      </div>
+      </article>
     </div>
 
     <!-- Bottom CTA -->

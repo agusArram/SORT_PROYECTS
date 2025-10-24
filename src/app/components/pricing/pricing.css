@@ -203,6 +203,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin: 0;
 }
 
 .faq-item {
@@ -219,6 +220,7 @@
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem 0;
 }
 
 .faq-answer {

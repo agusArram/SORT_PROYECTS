@@ -1,0 +1,74 @@
+<app-header></app-header>
+
+<main class="productos-page">
+  <!-- Hero Section -->
+  <section class="producto-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-icon">📦</span>
+          <span>Producto</span>
+        </div>
+        <h1 class="page-title">{{ producto.nombre }}</h1>
+        <p class="version">Versión {{ producto.version }}</p>
+        <p class="descripcion">{{ producto.descripcion }}</p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Descargar Ahora</a>
+          <a href="#caracteristicas" class="btn-secondary">Ver Características</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Características Detalladas -->
+  <section id="caracteristicas" class="caracteristicas-detalladas">
+    <div class="container">
+      <h2 class="section-title">Características Principales</h2>
+      <div class="caracteristicas-grid">
+        <article *ngFor="let caracteristica of producto.caracteristicas" class="caracteristica-card">
+          <div class="caracteristica-icono">{{ caracteristica.icono }}</div>
+          <h3 class="caracteristica-titulo">{{ caracteristica.titulo }}</h3>
+          <p class="caracteristica-descripcion">{{ caracteristica.descripcion }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Requisitos del Sistema -->
+  <section class="requisitos">
+    <div class="container">
+      <h2 class="section-title">Requisitos del Sistema</h2>
+      <dl class="requisitos-list">
+        <div class="requisito-item">
+          <dt class="requisito-label">Sistema Operativo</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.sistema }}</dd>
+        </div>
+        <div class="requisito-item">
+          <dt class="requisito-label">Memoria RAM</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.memoria }}</dd>
+        </div>
+        <div class="requisito-item">
+          <dt class="requisito-label">Espacio en Disco</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.disco }}</dd>
+        </div>
+        <div class="requisito-item">
+          <dt class="requisito-label">Otros Requisitos</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.otros }}</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta-final">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">¿Listo para transformar tu negocio?</h2>
+        <p class="cta-text">Descarga AppInventario gratis y comienza a gestionar tu inventario de forma profesional hoy mismo.</p>
+        <a href="#" class="btn-primary-large">Descargar Demo Gratuita</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

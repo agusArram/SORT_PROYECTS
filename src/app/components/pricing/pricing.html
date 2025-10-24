@@ -14,7 +14,7 @@
     </div>
 
     <div class="pricing-grid">
-      <div
+      <article
         *ngFor="let plan of plans"
         class="pricing-card"
         [class.popular]="plan.popular">
@@ -23,14 +23,14 @@
           ⭐ Más Popular
         </div>
 
-        <div class="plan-header">
+        <header class="plan-header">
           <h3 class="plan-name">{{ plan.name }}</h3>
           <div class="plan-price">
             <span class="price">{{ plan.price }}</span>
             <span class="period">{{ plan.period }}</span>
           </div>
           <p class="plan-description">{{ plan.description }}</p>
-        </div>
+        </header>
 
         <ul class="plan-features">
           <li *ngFor="let feature of plan.features" class="feature-item">
@@ -44,30 +44,30 @@
         <button class="plan-cta" [class.primary]="plan.popular">
           {{ plan.cta }}
         </button>
-      </div>
+      </article>
     </div>
 
     <!-- FAQ Section -->
-    <div class="faq-section">
+    <section class="faq-section">
       <h3 class="faq-title">Preguntas Frecuentes</h3>
-      <div class="faq-grid">
+      <dl class="faq-grid">
         <div class="faq-item">
-          <h4 class="faq-question">¿Necesito tarjeta de crédito para la demo?</h4>
-          <p class="faq-answer">No. La demo es completamente gratuita y sin límite de tiempo.</p>
+          <dt class="faq-question">¿Necesito tarjeta de crédito para la demo?</dt>
+          <dd class="faq-answer">No. La demo es completamente gratuita y sin límite de tiempo.</dd>
         </div>
         <div class="faq-item">
-          <h4 class="faq-question">¿Puedo cambiar de plan después?</h4>
-          <p class="faq-answer">Sí, puedes actualizar o cambiar tu plan en cualquier momento.</p>
+          <dt class="faq-question">¿Puedo cambiar de plan después?</dt>
+          <dd class="faq-answer">Sí, puedes actualizar o cambiar tu plan en cualquier momento.</dd>
         </div>
         <div class="faq-item">
-          <h4 class="faq-question">¿Qué incluyen las actualizaciones?</h4>
-          <p class="faq-answer">Nuevas funcionalidades, mejoras de seguridad y correcciones de bugs.</p>
+          <dt class="faq-question">¿Qué incluyen las actualizaciones?</dt>
+          <dd class="faq-answer">Nuevas funcionalidades, mejoras de seguridad y correcciones de bugs.</dd>
         </div>
         <div class="faq-item">
-          <h4 class="faq-question">¿Ofrecen capacitación?</h4>
-          <p class="faq-answer">Sí, en el plan Enterprise incluimos capacitación completa del equipo.</p>
+          <dt class="faq-question">¿Ofrecen capacitación?</dt>
+          <dd class="faq-answer">Sí, en el plan Enterprise incluimos capacitación completa del equipo.</dd>
         </div>
-      </div>
-    </div>
+      </dl>
+    </section>
   </div>
 </section>

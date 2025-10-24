@@ -1,10 +1,11 @@
 import { Component, signal, OnInit, effect, Renderer2, Inject } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    public router: Router
   ) {
     // Efecto para aplicar el tema cuando cambia
     effect(() => {
@@ -25,11 +27,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Cargar preferencia guardada o detectar preferencia del sistema
+    // Cargar preferencia guardada o usar tema claro por defecto
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme || 'light';
     this.isDarkMode.set(initialTheme === 'dark');
   }
 
@@ -47,9 +47,35 @@ export class HeaderComponent implements OnInit {
 
   scrollToSection(sectionId: string): void {
     this.closeMenu();
+
+    // Si no estamos en home, navegar primero a home
+    if (this.router.url !== '/') {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.scrollToElement(sectionId);
+        }, 100);
+      });
+    } else {
+      this.scrollToElement(sectionId);
+    }
+  }
+
+  private scrollToElement(sectionId: string): void {
+    // Si es "inicio", hacer scroll al top
+    if (sectionId === 'inicio') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // Para otras secciones, buscar el elemento
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  navegarYCerrar(ruta: string): void {
+    this.closeMenu();
+    this.router.navigate([ruta]);
   }
 }

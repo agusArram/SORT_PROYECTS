@@ -3,20 +3,20 @@
     <div class="nav-content">
       <!-- Logo -->
       <div class="logo">
-        <a href="/" class="logo-link">
+        <a routerLink="/" class="logo-link">
           <span class="logo-text">SORT</span>
           <span class="logo-accent">PROYECTS</span>
         </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="nav-links">
-        <a (click)="scrollToSection('inicio')" class="nav-link">Inicio</a>
-        <a (click)="scrollToSection('caracteristicas')" class="nav-link">Características</a>
-        <a (click)="scrollToSection('beneficios')" class="nav-link">Beneficios</a>
-        <a (click)="scrollToSection('precios')" class="nav-link">Precios</a>
-        <a (click)="scrollToSection('contacto')" class="nav-link">Contacto</a>
-      </div>
+      <ul class="nav-links">
+        <li><a (click)="scrollToSection('inicio')" class="nav-link">Inicio</a></li>
+        <li><a (click)="scrollToSection('caracteristicas')" class="nav-link">Características</a></li>
+        <li><a (click)="scrollToSection('beneficios')" class="nav-link">Beneficios</a></li>
+        <li><a (click)="scrollToSection('precios')" class="nav-link">Precios</a></li>
+        <li><a routerLink="/contacto" class="nav-link" routerLinkActive="active">Contacto</a></li>
+      </ul>
 
       <!-- Right Side: Theme Toggle + CTA -->
       <div class="nav-actions">
@@ -87,12 +87,14 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" [class.open]="isMenuOpen()">
-      <a (click)="scrollToSection('inicio')" class="mobile-link">Inicio</a>
-      <a (click)="scrollToSection('caracteristicas')" class="mobile-link">Características</a>
-      <a (click)="scrollToSection('beneficios')" class="mobile-link">Beneficios</a>
-      <a (click)="scrollToSection('precios')" class="mobile-link">Precios</a>
-      <a (click)="scrollToSection('contacto')" class="mobile-link">Contacto</a>
+    <nav class="mobile-menu" [class.open]="isMenuOpen()">
+      <ul>
+        <li><a (click)="scrollToSection('inicio')" class="mobile-link">Inicio</a></li>
+        <li><a (click)="scrollToSection('caracteristicas')" class="mobile-link">Características</a></li>
+        <li><a (click)="scrollToSection('beneficios')" class="mobile-link">Beneficios</a></li>
+        <li><a (click)="scrollToSection('precios')" class="mobile-link">Precios</a></li>
+        <li><a (click)="navegarYCerrar('/contacto')" class="mobile-link">Contacto</a></li>
+      </ul>
 
       <!-- Theme Toggle in Mobile -->
       <button
@@ -128,6 +130,6 @@
       <a (click)="scrollToSection('caracteristicas')" class="btn-primary mobile-cta">
         Descargar Gratis
       </a>
-    </div>
+    </nav>
   </nav>
 </header>

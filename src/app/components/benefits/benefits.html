@@ -10,43 +10,47 @@
     </div>
 
     <div class="benefits-grid">
-      <div *ngFor="let benefit of benefits" class="benefit-card">
+      <article *ngFor="let benefit of benefits" class="benefit-card">
         <div class="benefit-icon">{{ benefit.icon }}</div>
         <h3 class="benefit-title">{{ benefit.title }}</h3>
         <p class="benefit-description">{{ benefit.description }}</p>
-      </div>
+      </article>
     </div>
 
     <!-- Comparison Table -->
     <div class="comparison-section">
       <h3 class="comparison-title">AppInventario vs. Métodos Tradicionales</h3>
-      <div class="comparison-table">
-        <div class="comparison-row header">
-          <div class="comparison-cell"></div>
-          <div class="comparison-cell">Excel / Papel</div>
-          <div class="comparison-cell highlight">AppInventario</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell feature">Gestión de Variantes</div>
-          <div class="comparison-cell">❌ Manual y confuso</div>
-          <div class="comparison-cell highlight">✅ Automático y preciso</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell feature">Control de Stock</div>
-          <div class="comparison-cell">❌ Propenso a errores</div>
-          <div class="comparison-cell highlight">✅ Transaccional</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell feature">Análisis de Rentabilidad</div>
-          <div class="comparison-cell">❌ Requiere cálculos manuales</div>
-          <div class="comparison-cell highlight">✅ En tiempo real</div>
-        </div>
-        <div class="comparison-row">
-          <div class="comparison-cell feature">Reportes Profesionales</div>
-          <div class="comparison-cell">❌ Difícil de generar</div>
-          <div class="comparison-cell highlight">✅ PDF y Excel en 1 clic</div>
-        </div>
-      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr class="comparison-row header">
+            <th class="comparison-cell"></th>
+            <th class="comparison-cell">Excel / Papel</th>
+            <th class="comparison-cell highlight">AppInventario</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="comparison-row">
+            <td class="comparison-cell feature">Gestión de Variantes</td>
+            <td class="comparison-cell">❌ Manual y confuso</td>
+            <td class="comparison-cell highlight">✅ Automático y preciso</td>
+          </tr>
+          <tr class="comparison-row">
+            <td class="comparison-cell feature">Control de Stock</td>
+            <td class="comparison-cell">❌ Propenso a errores</td>
+            <td class="comparison-cell highlight">✅ Transaccional</td>
+          </tr>
+          <tr class="comparison-row">
+            <td class="comparison-cell feature">Análisis de Rentabilidad</td>
+            <td class="comparison-cell">❌ Requiere cálculos manuales</td>
+            <td class="comparison-cell highlight">✅ En tiempo real</td>
+          </tr>
+          <tr class="comparison-row">
+            <td class="comparison-cell feature">Reportes Profesionales</td>
+            <td class="comparison-cell">❌ Difícil de generar</td>
+            <td class="comparison-cell highlight">✅ PDF y Excel en 1 clic</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
