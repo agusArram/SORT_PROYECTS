@@ -13,45 +13,46 @@ import { FooterComponent } from '../../components/footer/footer';
 export class ProductosComponent {
   readonly producto = {
     nombre: 'AppInventario',
-    version: '2.0',
-    descripcion: 'Sistema profesional de gestión de inventario con soporte para variantes',
+    version: '2.3.2',
+    descripcion: 'Sistema de Gestión de Inventario, Ventas y Precios (SaaS) - La solución para pequeños y medianos comercios que buscan control total sobre su stock, ventas y precios',
     caracteristicas: [
       {
-        titulo: 'Gestión de Variantes Inteligente',
-        descripcion: 'Control preciso de productos con múltiples atributos (talle, color, material)',
-        icono: '🎨'
-      },
-      {
-        titulo: 'Stock Transaccional',
-        descripcion: 'Cada movimiento queda registrado con historial completo de cambios',
+        titulo: 'Inventario (Stock)',
+        descripcion: 'Registro de productos, variantes (talle/color), movimientos de stock automáticos y alertas de stock bajo',
         icono: '📦'
       },
       {
-        titulo: 'Análisis de Rentabilidad',
-        descripcion: 'Calcula automáticamente el margen de ganancia real por producto',
+        titulo: 'Ventas',
+        descripcion: 'Registro ágil de transacciones, anulación de ventas, historial y análisis del Top 10 de productos vendidos',
         icono: '💰'
       },
       {
-        titulo: 'Ventas Rápidas',
-        descripcion: 'Interfaz optimizada para registrar ventas en segundos',
-        icono: '⚡'
-      },
-      {
-        titulo: 'Reportes Profesionales',
-        descripcion: 'Genera informes en PDF y Excel con un solo clic',
+        titulo: 'Métricas (Dashboard)',
+        descripcion: 'Resumen visual en tiempo real: valor del inventario, ventas diarias/mensuales, y gráficos comparativos de rendimiento',
         icono: '📊'
       },
       {
-        titulo: 'Backup Automático',
-        descripcion: 'Tus datos seguros con respaldos automáticos diarios',
-        icono: '🔒'
+        titulo: 'Rentabilidad',
+        descripcion: 'Análisis de márgenes de ganancia por producto y categoría para optimizar precios y compras',
+        icono: '💹'
+      },
+      {
+        titulo: 'Sincronización (SaaS)',
+        descripcion: 'Datos seguros y accesibles desde cualquier lugar, guardados automáticamente en la nube (PostgreSQL/Supabase)',
+        icono: '☁️'
+      },
+      {
+        titulo: 'Multi-tenant',
+        descripcion: 'Arquitectura SaaS con aislamiento total de datos por cliente y hasta 5 usuarios en plan Full',
+        icono: '👥'
       }
     ],
     requisitos: {
-      sistema: 'Windows 10/11, macOS 10.14+, Linux (Ubuntu 20.04+)',
-      memoria: '4 GB RAM mínimo',
-      disco: '500 MB espacio disponible',
-      otros: 'Java 11 o superior'
-    }
+      sistema: 'SaaS - Acceso desde cualquier navegador web moderno',
+      baseDatos: 'PostgreSQL (Gestionado por Supabase)',
+      arquitectura: 'Multi-tenant con aislamiento de datos por cliente',
+      tecnologia: 'Pool de conexiones HikariCP, Verificación de Licencias (bcrypt)'
+    },
+    repositorio: 'https://github.com/agusArram/AppInventario/tree/Dev'
   };
 }

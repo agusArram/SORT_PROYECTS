@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -9,10 +10,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hero.css'
 })
 export class HeroComponent {
+  constructor(private router: Router) {}
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  navegarContacto(): void {
+    this.router.navigate(['/contacto']);
   }
 }

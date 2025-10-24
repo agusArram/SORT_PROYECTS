@@ -34,26 +34,34 @@
     </div>
   </section>
 
-  <!-- Requisitos del Sistema -->
+  <!-- Tecnología -->
   <section class="requisitos">
     <div class="container">
-      <h2 class="section-title">Requisitos del Sistema</h2>
+      <h2 class="section-title">Tecnología y Arquitectura</h2>
       <dl class="requisitos-list">
         <div class="requisito-item">
-          <dt class="requisito-label">Sistema Operativo</dt>
+          <dt class="requisito-label">Modalidad</dt>
           <dd class="requisito-valor">{{ producto.requisitos.sistema }}</dd>
         </div>
         <div class="requisito-item">
-          <dt class="requisito-label">Memoria RAM</dt>
-          <dd class="requisito-valor">{{ producto.requisitos.memoria }}</dd>
+          <dt class="requisito-label">Base de Datos</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.baseDatos }}</dd>
         </div>
         <div class="requisito-item">
-          <dt class="requisito-label">Espacio en Disco</dt>
-          <dd class="requisito-valor">{{ producto.requisitos.disco }}</dd>
+          <dt class="requisito-label">Arquitectura</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.arquitectura }}</dd>
         </div>
         <div class="requisito-item">
-          <dt class="requisito-label">Otros Requisitos</dt>
-          <dd class="requisito-valor">{{ producto.requisitos.otros }}</dd>
+          <dt class="requisito-label">Tecnología Backend</dt>
+          <dd class="requisito-valor">{{ producto.requisitos.tecnologia }}</dd>
+        </div>
+        <div class="requisito-item">
+          <dt class="requisito-label">Repositorio Público</dt>
+          <dd class="requisito-valor">
+            <a [href]="producto.repositorio" target="_blank" rel="noopener" class="repo-link">
+              Ver código fuente en GitHub (rama Dev)
+            </a>
+          </dd>
         </div>
       </dl>
     </div>

@@ -21,49 +21,57 @@ interface PricingPlan {
 export class PricingComponent {
   protected readonly plans: PricingPlan[] = [
     {
-      name: 'Demo',
+      name: 'DEMO',
       price: 'Gratis',
-      period: 'Prueba sin límites de tiempo',
-      description: 'Perfecto para probar todas las funcionalidades',
+      period: 'Prueba inicial',
+      description: 'Ideal para probar el sistema antes de comprometerse',
       features: [
-        'Todas las características',
         'Hasta 50 productos',
-        'Soporte por email',
-        'Actualizaciones incluidas'
+        '1 usuario',
+        'Dashboard básico',
+        'Productos, ventas y stock',
+        'Sin alertas de stock',
+        'Soporte limitado',
+        'Sin backup automático'
       ],
-      cta: 'Descargar Demo'
+      cta: 'Probar Gratis'
     },
     {
-      name: 'Profesional',
-      price: '$49',
+      name: 'PLAN BASE',
+      price: 'USD 40',
       period: '/mes',
-      description: 'Para negocios que buscan crecer',
+      description: 'La herramienta esencial para emprendedores y feriantes',
       features: [
-        'Productos ilimitados',
-        'Variantes ilimitadas',
-        'Análisis de rentabilidad',
-        'Reportes PDF y Excel',
-        'Múltiples usuarios',
-        'Soporte prioritario',
-        'Actualizaciones incluidas'
+        'Productos y ventas ilimitados',
+        '1 usuario',
+        'Alertas de stock bajo',
+        'Dashboard básico',
+        'Clientes y proveedores',
+        'Exportación de productos a PDF',
+        'Backup manual',
+        'Soporte básico'
       ],
       cta: 'Comenzar Ahora',
       popular: true
     },
     {
-      name: 'Enterprise',
-      price: 'A medida',
-      period: 'Licencia perpetua',
-      description: 'Para empresas con necesidades específicas',
+      name: 'PLAN FULL',
+      price: 'USD 70',
+      period: '/mes',
+      description: 'Para negocios consolidados que requieren análisis detallados',
       features: [
-        'Todo lo de Profesional',
-        'Instalación en servidores propios',
-        'Personalización completa',
-        'Capacitación del equipo',
-        'Soporte 24/7',
-        'Integraciones personalizadas'
+        'Todo lo del Plan Base',
+        'Hasta 5 usuarios',
+        'Dashboard avanzado con comparativas',
+        'Historial de precios',
+        'Lista de faltantes/reposición',
+        'Reportes automáticos',
+        'Exportación completa a PDF',
+        'Backup automático',
+        'Personalizable (columnas, colores)',
+        'Soporte prioritario + mejoras'
       ],
-      cta: 'Contactar Ventas'
+      cta: 'Obtener Full'
     }
   ];
 }
