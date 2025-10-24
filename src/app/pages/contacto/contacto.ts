@@ -31,7 +31,7 @@ export class ContactoComponent {
       icono: '💻',
       titulo: 'GitHub',
       valor: '@sortproyects',
-      link: 'https://github.com/sortproyects'
+      link: 'https://github.com/agusArram'
     }
   ];
 
@@ -46,7 +46,7 @@ export class ContactoComponent {
     },
     {
       pregunta: '¿Puedo solicitar nuevas funcionalidades?',
-      respuesta: 'Por supuesto! Valoramos mucho el feedback de nuestros usuarios y consideramos todas las sugerencias.'
+      respuesta: 'Por supuesto! Valoramos mucho el feedback de nuestros usuarios y los incentivo a que me digan mejoras.'
     }
   ];
 
