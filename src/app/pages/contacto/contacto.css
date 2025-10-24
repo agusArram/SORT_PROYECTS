@@ -122,6 +122,26 @@
   min-height: 120px;
 }
 
+.mensaje-estado {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mensaje-estado.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.mensaje-estado.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
 .btn-submit {
   display: inline-flex;
   align-items: center;
@@ -137,12 +157,24 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 0 30px var(--accent-glow);
+  width: 100%;
 }
 
-.btn-submit:hover {
+.btn-submit:hover:not(:disabled) {
   background: var(--accent-primary-light);
   transform: translateY(-3px);
   box-shadow: 0 0 40px var(--accent-glow);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-submit span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-icon {

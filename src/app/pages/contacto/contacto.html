@@ -22,16 +22,27 @@
         <!-- Formulario de Contacto -->
         <article class="formulario-section">
           <h2 class="section-title">Envíanos un mensaje</h2>
-          <form class="contacto-form" (submit)="enviarFormulario()">
+
+          <!-- Mensaje de estado -->
+          <div *ngIf="mensajeEstado()" class="mensaje-estado" [class.success]="mensajeEstado()?.tipo === 'success'" [class.error]="mensajeEstado()?.tipo === 'error'">
+            {{ mensajeEstado()?.texto }}
+          </div>
+
+          <form class="contacto-form" (submit)="enviarFormulario($event)" id="contactForm">
+            <!-- Hidden fields for Web3Forms -->
+            <input type="hidden" name="access_key" value="87e1a14e-ccf0-4851-8dcd-c6ef81bc4507">
+            <input type="hidden" name="subject" value="Nuevo mensaje desde Sort Proyects">
+            <input type="hidden" name="from_name" value="Sort Proyects - Formulario Web">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
             <div class="form-group">
               <label for="nombre" class="form-label">Nombre completo</label>
               <input
                 type="text"
                 id="nombre"
+                name="name"
                 class="form-input"
                 placeholder="Tu nombre"
-                [value]="nombre()"
-                (input)="nombre.set($any($event.target).value)"
                 required>
             </div>
 
@@ -40,10 +51,9 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 class="form-input"
                 placeholder="tu@email.com"
-                [value]="email()"
-                (input)="email.set($any($event.target).value)"
                 required>
             </div>
 
@@ -51,19 +61,23 @@
               <label for="mensaje" class="form-label">Mensaje</label>
               <textarea
                 id="mensaje"
+                name="message"
                 class="form-textarea"
                 placeholder="Cuéntanos en qué podemos ayudarte..."
                 rows="6"
-                [value]="mensaje()"
-                (input)="mensaje.set($any($event.target).value)"
                 required></textarea>
             </div>
 
-            <button type="submit" class="btn-submit">
-              Enviar Mensaje
-              <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
+            <button type="submit" class="btn-submit" [disabled]="enviando()">
+              <span *ngIf="!enviando()">
+                Enviar Mensaje
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </span>
+              <span *ngIf="enviando()">
+                Enviando...
+              </span>
             </button>
           </form>
         </article>

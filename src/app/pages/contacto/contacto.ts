@@ -11,9 +11,8 @@ import { FooterComponent } from '../../components/footer/footer';
   styleUrl: './contacto.css'
 })
 export class ContactoComponent {
-  protected readonly nombre = signal('');
-  protected readonly email = signal('');
-  protected readonly mensaje = signal('');
+  protected readonly enviando = signal(false);
+  protected readonly mensajeEstado = signal<{tipo: 'success' | 'error', texto: string} | null>(null);
 
   readonly contactInfo = [
     {
@@ -51,20 +50,51 @@ export class ContactoComponent {
     }
   ];
 
-  enviarFormulario(): void {
-    // Aquí iría la lógica para enviar el formulario
-    console.log('Formulario enviado:', {
-      nombre: this.nombre(),
-      email: this.email(),
-      mensaje: this.mensaje()
-    });
-    alert('Gracias por tu mensaje! Te responderemos pronto.');
-    this.resetFormulario();
-  }
+  async enviarFormulario(event: Event): Promise<void> {
+    event.preventDefault();
 
-  resetFormulario(): void {
-    this.nombre.set('');
-    this.email.set('');
-    this.mensaje.set('');
+    const form = event.target as HTMLFormElement;
+    this.enviando.set(true);
+    this.mensajeEstado.set(null);
+
+    try {
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      });
+
+      const data = await response.json();
+
+      if (response.status === 200) {
+        this.mensajeEstado.set({
+          tipo: 'success',
+          texto: data.message || '¡Mensaje enviado con éxito! Te responderemos pronto.'
+        });
+        form.reset();
+      } else {
+        throw new Error(data.message || 'Error al enviar el mensaje');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      this.mensajeEstado.set({
+        tipo: 'error',
+        texto: 'Hubo un error al enviar el mensaje. Por favor intenta de nuevo o escribe directamente a arrambide.agustin@gmail.com'
+      });
+    } finally {
+      this.enviando.set(false);
+
+      // Ocultar mensaje después de 5 segundos
+      setTimeout(() => {
+        this.mensajeEstado.set(null);
+      }, 5000);
+    }
   }
 }
