@@ -1,0 +1,65 @@
+<header class="header">
+  <nav class="nav-container">
+    <div class="nav-content">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="/" class="logo-link">
+          <span class="logo-text">SORT</span>
+          <span class="logo-accent">PROYECTS</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a (click)="scrollToSection('inicio')" class="nav-link">Inicio</a>
+        <a (click)="scrollToSection('caracteristicas')" class="nav-link">Características</a>
+        <a (click)="scrollToSection('beneficios')" class="nav-link">Beneficios</a>
+        <a (click)="scrollToSection('precios')" class="nav-link">Precios</a>
+        <a (click)="scrollToSection('contacto')" class="nav-link">Contacto</a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="nav-cta">
+        <a (click)="scrollToSection('caracteristicas')" class="btn-primary">
+          Descargar Gratis
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="mobile-menu-btn"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle menu">
+        <svg
+          *ngIf="!isMenuOpen()"
+          class="menu-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg
+          *ngIf="isMenuOpen()"
+          class="menu-icon"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" [class.open]="isMenuOpen()">
+      <a (click)="scrollToSection('inicio')" class="mobile-link">Inicio</a>
+      <a (click)="scrollToSection('caracteristicas')" class="mobile-link">Características</a>
+      <a (click)="scrollToSection('beneficios')" class="mobile-link">Beneficios</a>
+      <a (click)="scrollToSection('precios')" class="mobile-link">Precios</a>
+      <a (click)="scrollToSection('contacto')" class="mobile-link">Contacto</a>
+      <a (click)="scrollToSection('caracteristicas')" class="btn-primary mobile-cta">
+        Descargar Gratis
+      </a>
+    </div>
+  </nav>
+</header>
