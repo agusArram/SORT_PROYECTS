@@ -27,8 +27,8 @@ export class BenefitsComponent {
       icon: '📱'
     },
     {
-      title: 'Para Negocios que Buscan Crecer',
-      description: 'Análisis de rentabilidad real para tomar decisiones basadas en datos, no en intuición.',
+      title: 'Modo Híbrido (Online/Offline)',
+      description: 'Nunca pierdas una venta. AppInventario sigue operando de forma local aunque se caiga internet. Tus datos se guardan al instante y se sincronizan con la nube automáticamente cuando recuperas la conexión.',
       icon: '📈'
     }
   ];

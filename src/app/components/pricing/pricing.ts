@@ -46,7 +46,7 @@ export class PricingComponent {
         '1 usuario',
         'Alertas de stock bajo',
         'Dashboard básico',
-        'Clientes y proveedores',
+        'Gestión de Clientes',
         'Exportación de productos a PDF',
         'Backup manual',
         'Soporte básico'
