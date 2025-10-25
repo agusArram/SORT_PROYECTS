@@ -23,10 +23,12 @@
         <article class="formulario-section">
           <h2 class="section-title">Envíanos un mensaje</h2>
 
-          <!-- Mensaje de estado -->
-          <div *ngIf="mensajeEstado()" class="mensaje-estado" [class.success]="mensajeEstado()?.tipo === 'success'" [class.error]="mensajeEstado()?.tipo === 'error'">
-            {{ mensajeEstado()?.texto }}
-          </div>
+          <!-- Mensaje de estado con @if -->
+          @if (mensajeEstado(); as estado) {
+            <div class="mensaje-estado" [class.success]="estado.tipo === 'success'" [class.error]="estado.tipo === 'error'">
+              {{ estado.texto }}
+            </div>
+          }
 
           <form class="contacto-form" (submit)="enviarFormulario($event)" id="contactForm">
             <!-- Hidden fields for Web3Forms -->
@@ -69,15 +71,19 @@
             </div>
 
             <button type="submit" class="btn-submit" [disabled]="enviando()">
-              <span *ngIf="!enviando()">
-                Enviar Mensaje
-                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
-              </span>
-              <span *ngIf="enviando()">
-                Enviando...
-              </span>
+              <!-- Uso de @if/@else para el texto del botón -->
+              @if (!enviando()) {
+                <span>
+                  Enviar Mensaje
+                  <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                </span>
+              } @else {
+                <span>
+                  Enviando...
+                </span>
+              }
             </button>
           </form>
         </article>
@@ -87,15 +93,18 @@
           <h2 class="section-title">Información de contacto</h2>
 
           <ul class="contact-methods">
-            <li *ngFor="let info of contactInfo" class="contact-item">
-              <div class="contact-icon">{{ info.icono }}</div>
-              <div class="contact-details">
-                <h3 class="contact-title">{{ info.titulo }}</h3>
-                <a [href]="info.link" class="contact-link" target="_blank" rel="noopener">
-                  {{ info.valor }}
-                </a>
-              </div>
-            </li>
+            <!-- Bucle con @for -->
+            @for (info of contactInfo; track $index) {
+              <li class="contact-item">
+                <div class="contact-icon">{{ info.icono }}</div>
+                <div class="contact-details">
+                  <h3 class="contact-title">{{ info.titulo }}</h3>
+                  <a [href]="info.link" class="contact-link" target="_blank" rel="noopener">
+                    {{ info.valor }}
+                  </a>
+                </div>
+              </li>
+            }
           </ul>
 
           <div class="info-card">
@@ -115,10 +124,13 @@
     <div class="container">
       <h2 class="section-title">Preguntas Frecuentes</h2>
       <dl class="faq-list">
-        <div *ngFor="let faq of faqs" class="faq-item">
-          <dt class="faq-pregunta">{{ faq.pregunta }}</dt>
-          <dd class="faq-respuesta">{{ faq.respuesta }}</dd>
-        </div>
+        <!-- Bucle con @for -->
+        @for (faq of faqs; track $index) {
+          <div class="faq-item">
+            <dt class="faq-pregunta">{{ faq.pregunta }}</dt>
+            <dd class="faq-respuesta">{{ faq.respuesta }}</dd>
+          </div>
+        }
       </dl>
     </div>
   </section>

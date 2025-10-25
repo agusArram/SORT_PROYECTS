@@ -25,11 +25,14 @@
     <div class="container">
       <h2 class="section-title">Características Principales</h2>
       <div class="caracteristicas-grid">
-        <article *ngFor="let caracteristica of producto.caracteristicas" class="caracteristica-card">
-          <div class="caracteristica-icono">{{ caracteristica.icono }}</div>
-          <h3 class="caracteristica-titulo">{{ caracteristica.titulo }}</h3>
-          <p class="caracteristica-descripcion">{{ caracteristica.descripcion }}</p>
-        </article>
+        <!-- Bucle actualizado a @for -->
+        @for (caracteristica of producto.caracteristicas; track $index) {
+          <article class="caracteristica-card">
+            <div class="caracteristica-icono">{{ caracteristica.icono }}</div>
+            <h3 class="caracteristica-titulo">{{ caracteristica.titulo }}</h3>
+            <p class="caracteristica-descripcion">{{ caracteristica.descripcion }}</p>
+          </article>
+        }
       </div>
     </div>
   </section>
