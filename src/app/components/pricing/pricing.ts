@@ -23,30 +23,30 @@ export class PricingComponent {
     {
       name: 'DEMO',
       price: 'Gratis',
-      period: 'Prueba inicial',
-      description: 'Ideal para probar el sistema antes de comprometerse',
+      period: 'Prueba de Potencial',
+      description: 'Descubre todo el potencial con datos de prueba y límites de guardado.',
       features: [
-        'Hasta 50 productos',
+        'Límite: 25 Productos',
+        'Límite: 15 Ventas',
+        'Límite: 10 Clientes',
+        'Acceso a Dashboard (con datos de prueba)',
+        'Acceso a Rentabilidad (con datos de prueba)',
         '1 usuario',
-        'Dashboard básico',
-        'Productos, ventas y stock',
-        'Sin alertas de stock',
-        'Soporte limitado',
-        'Sin backup automático'
+        'Soporte limitado'
       ],
-      cta: 'Probar Gratis'
+      cta: 'Empezar Gratis'
     },
     {
       name: 'PLAN BASE',
       price: 'USD 40',
       period: '/mes',
-      description: 'La herramienta esencial para emprendedores y feriantes',
+      description: 'La herramienta esencial para emprendedores y feriantes.',
       features: [
         'Productos y ventas ilimitados',
         '1 usuario',
-        'Alertas de stock bajo',
-        'Dashboard básico',
         'Gestión de Clientes',
+        'Alertas de stock bajo',
+        'Dashboard básico (datos reales)',
         'Exportación de productos a PDF',
         'Backup manual',
         'Soporte básico'
@@ -58,15 +58,16 @@ export class PricingComponent {
       name: 'PLAN FULL',
       price: 'USD 70',
       period: '/mes',
-      description: 'Para negocios consolidados que requieren análisis detallados',
+      description: 'Para negocios consolidados que requieren análisis detallados.',
       features: [
         'Todo lo del Plan Base',
         'Hasta 5 usuarios',
         'Dashboard avanzado con comparativas',
+        'Módulo de Rentabilidad completo',
         'Historial de precios',
         'Lista de faltantes/reposición',
         'Reportes automáticos',
-        'Exportación completa a PDF',
+        'Exportación completa (Ventas, Clientes, reportes)',
         'Backup automático',
         'Personalizable (columnas, colores)',
         'Soporte prioritario + mejoras'

@@ -1,3 +1,10 @@
+/*
+  Este es tu archivo pricing.css con 3 cambios clave para responsive:
+  1. `.plan-price`: Cambiado a `flex-direction: column` para apilar el precio y el período.
+  2. `.price`: Reducido el `font-size` a `2.75rem` (antes 3.5rem) para móvil.
+  3. `@media`: Agregada una regla para restaurar los tamaños grandes en desktop.
+*/
+
 .pricing {
   padding: 6rem 1.5rem;
   background: var(--bg-secondary);
@@ -104,16 +111,18 @@
   font-family: 'Inter Tight', sans-serif;
 }
 
+/* === CAMBIOS PARA MOVIL === */
 .plan-price {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;  /* 1. Apilado vertical (Móvil) */
+  align-items: center;     /* 2. Centrado */
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0;                /* 3. Reducido el gap */
   margin-bottom: 1rem;
 }
 
 .price {
-  font-size: 3.5rem;
+  font-size: 2.75rem;      /* 4. Tamaño reducido (Móvil) */
   font-weight: 800;
   color: var(--accent-primary);
   font-family: 'Inter Tight', sans-serif;
@@ -123,7 +132,10 @@
   font-size: 1.1rem;
   color: var(--text-secondary);
   font-weight: 500;
+  margin-top: -0.5rem; /* 5. Ajuste para acercarlo al precio */
 }
+/* === FIN CAMBIOS MOVIL === */
+
 
 .plan-description {
   font-size: 1rem;
@@ -239,4 +251,20 @@
   .faq-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* --- 6. AGREGADO: Reglas para restaurar en Desktop --- */
+  .plan-price {
+    flex-direction: row;    /* Restaurar horizontal */
+    align-items: baseline;  /* Restaurar línea base */
+    gap: 0.25rem;           /* Restaurar gap original */
+  }
+
+  .price {
+    font-size: 3.5rem;      /* Restaurar tamaño grande original */
+  }
+
+  .period {
+    margin-top: 0;          /* Restaurar margen original */
+  }
+  /* --- Fin de lo agregado --- */
 }
