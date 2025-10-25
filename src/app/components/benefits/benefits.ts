@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 interface Benefit {
   title: string;
   description: string;
-  icon: string;
+  icon: string; // Cambiamos los emojis aquí
 }
 
 @Component({
@@ -19,17 +19,18 @@ export class BenefitsComponent {
     {
       title: 'Para Tiendas de Ropa y Calzado',
       description: 'Gestiona talles, colores y modelos sin complicaciones. Cada variante con su propio stock y precio.',
-      icon: '👕'
-    },
-    {
-      title: 'Para Comercios de Electrónica',
-      description: 'Controla versiones, capacidades y modelos. Precio diferenciado por cada especificación técnica.',
-      icon: '📱'
+      icon: '👕' // Mantenemos este, es relevante
     },
     {
       title: 'Modo Híbrido (Online/Offline)',
       description: 'Nunca pierdas una venta. AppInventario sigue operando de forma local aunque se caiga internet. Tus datos se guardan al instante y se sincronizan con la nube automáticamente cuando recuperas la conexión.',
-      icon: '📈'
+      icon: '🔄' // Cambiado a Sincronización/Ciclo
+    },
+    {
+      title: 'Para Negocios que Buscan Crecer',
+      description: 'Análisis de rentabilidad real para tomar decisiones basadas en datos, no en intuición.',
+      icon: '💡' // Cambiado a Idea/Insight/Inteligencia
+      // O podrías volver a usar 📈 aquí si '💡' no te convence
     }
   ];
 }
