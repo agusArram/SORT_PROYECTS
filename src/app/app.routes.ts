@@ -4,8 +4,8 @@ import { HomeComponent } from './pages/home/home';
 import { ContactoComponent } from './pages/contacto/contacto';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, title: 'Sort Proyects - AppInventario' },
+  { path: '', component: HomeComponent, title: 'Arrambide Tech - SortProjet' },
   // { path: 'productos', component: ProductosComponent, title: 'Productos - AppInventario' },
-  { path: 'contacto', component: ContactoComponent, title: 'Contacto - Sort Proyects' },
+  { path: 'contacto', component: ContactoComponent, title: 'Contacto - Arrambide Tech' },
   { path: '**', redirectTo: '' }
 ];
