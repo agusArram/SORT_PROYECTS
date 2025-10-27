@@ -1,17 +1,18 @@
 /*
-  Este es tu archivo pricing.css con 3 cambios clave para responsive:
-  1. `.plan-price`: Cambiado a `flex-direction: column` para apilar el precio y el período.
-  2. `.price`: Reducido el `font-size` a `2.75rem` (antes 3.5rem) para móvil.
-  3. `@media`: Agregada una regla para restaurar los tamaños grandes en desktop.
+  CSS de Pricing con ajustes para reducir el tamaño general
+  y asegurar que entre en pantalla en desktop.
 */
 
 .pricing {
   padding: 6rem 1.5rem;
   background: var(--bg-secondary);
+  /* Asegurarse de que no haya desbordamiento horizontal */
+  overflow-x: hidden;
 }
 
 .pricing-container {
-  max-width: 1280px;
+  /* Reducir el max-width para que el contenido no sea excesivamente ancho */
+  max-width: 1100px; /* Reducido de 1280px */
   margin: 0 auto;
 }
 
@@ -33,7 +34,8 @@
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  /* Ajustar el clamp para que el tamaño máximo sea un poco menor en desktop */
+  font-size: clamp(2rem, 3.5vw, 2.75rem); /* Ajustado de 4vw, 3rem */
   font-weight: 800;
   line-height: 1.2;
   color: var(--text-primary);
@@ -49,15 +51,17 @@
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Ligeramente reducido de 1.2rem */
   line-height: 1.7;
   color: var(--text-secondary);
+  max-width: 600px; /* Reducir ancho máximo para que no se extienda tanto */
+  margin: 0 auto;
 }
 
 .pricing-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem; /* Reducido de 2rem para tarjetas en móvil */
   margin-bottom: 5rem;
 }
 
@@ -66,8 +70,10 @@
   background: var(--bg-card);
   border: 2px solid var(--border-default);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 2rem; /* Reducido de 2.5rem */
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -89,56 +95,53 @@
   transform: translateX(-50%);
   background: var(--accent-primary);
   color: var(--bg-primary);
-  padding: 0.5rem 1.5rem;
+  padding: 0.4rem 1rem; /* Reducido de 0.5rem 1.5rem */
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.8rem; /* Reducido de 0.85rem */
   font-weight: 700;
   box-shadow: 0 0 20px var(--accent-glow);
 }
 
 .plan-header {
   text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reducido de 2rem */
+  padding-bottom: 1.5rem; /* Reducido de 2rem */
   border-bottom: 1px solid var(--border-default);
 }
 
 .plan-name {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Reducido de 1.5rem */
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem; /* Reducido de 1rem */
   font-family: 'Inter Tight', sans-serif;
 }
 
-/* === CAMBIOS PARA MOVIL === */
 .plan-price {
   display: flex;
-  flex-direction: column;  /* 1. Apilado vertical (Móvil) */
-  align-items: center;     /* 2. Centrado */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 0;                /* 3. Reducido el gap */
-  margin-bottom: 1rem;
+  gap: 0;
+  margin-bottom: 0.75rem; /* Reducido de 1rem */
 }
 
 .price {
-  font-size: 2.75rem;      /* 4. Tamaño reducido (Móvil) */
+  font-size: 2.25rem; /* Reducido de 2.75rem para móvil */
   font-weight: 800;
   color: var(--accent-primary);
   font-family: 'Inter Tight', sans-serif;
 }
 
 .period {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reducido de 1.1rem */
   color: var(--text-secondary);
   font-weight: 500;
-  margin-top: -0.5rem; /* 5. Ajuste para acercarlo al precio */
+  margin-top: -0.5rem;
 }
-/* === FIN CAMBIOS MOVIL === */
-
 
 .plan-description {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Reducido de 1rem */
   color: var(--text-secondary);
   margin: 0;
 }
@@ -146,36 +149,38 @@
 .plan-features {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.5rem 0; /* Reducido de 2rem */
+  flex-grow: 1;
 }
 
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
+  gap: 0.6rem; /* Reducido de 0.75rem */
+  padding: 0.6rem 0; /* Reducido de 0.75rem */
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 0.95rem; /* Reducido de 1rem */
 }
 
 .check-icon {
-  width: 20px;
-  height: 20px;
+  width: 18px; /* Reducido de 20px */
+  height: 18px; /* Reducido de 20px */
   color: var(--accent-primary);
   flex-shrink: 0;
 }
 
 .plan-cta {
   width: 100%;
-  padding: 1rem 2rem;
-  border-radius: 12px;
+  padding: 0.8rem 1.5rem; /* Reducido de 1rem 2rem */
+  border-radius: 10px; /* Ligeramente reducido de 12px */
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reducido de 1.1rem */
   border: 2px solid var(--accent-primary);
   background: transparent;
   color: var(--accent-primary);
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .plan-cta:hover {
@@ -199,72 +204,81 @@
 
 /* FAQ Section */
 .faq-section {
-  margin-top: 5rem;
+  margin-top: 4rem; /* Reducido de 5rem */
 }
 
 .faq-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3.5vw, 2.25rem); /* Ajustado de 2.5rem */
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Reducido de 3rem */
   font-family: 'Inter Tight', sans-serif;
 }
 
 .faq-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem; /* Reducido de 2rem */
   margin: 0;
 }
 
 .faq-item {
-  padding: 2rem;
+  padding: 1.5rem; /* Reducido de 2rem */
   background: var(--bg-card);
   border-radius: 12px;
-  border-left: 4px solid var(--accent-primary);
   border: 1px solid var(--border-default);
+  /* ¡AQUÍ ESTÁ DE VUELTA EL EFECTO! */
   border-left: 4px solid var(--accent-primary);
 }
 
 .faq-question {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Reducido de 1.2rem */
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
-  margin: 0 0 0.75rem 0;
+  margin-bottom: 0.6rem; /* Reducido de 0.75rem */
+  margin: 0 0 0.6rem 0;
 }
 
 .faq-answer {
-  font-size: 1rem;
+  font-size: 0.95rem; /* Reducido de 1rem */
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.6; /* Ligeramente reducido de 1.7 */
   margin: 0;
 }
 
 /* Responsive */
 @media (min-width: 768px) {
   .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
+    /* Mantenemos 3 columnas para tablet y desktop, ajustamos el gap */
+    gap: 1.5rem;
   }
 
   .faq-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* --- 6. AGREGADO: Reglas para restaurar en Desktop --- */
+  /* --- Reglas para restaurar precio en Desktop --- */
   .plan-price {
-    flex-direction: row;    /* Restaurar horizontal */
-    align-items: baseline;  /* Restaurar línea base */
-    gap: 0.25rem;           /* Restaurar gap original */
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.25rem;
   }
 
   .price {
-    font-size: 3.5rem;      /* Restaurar tamaño grande original */
+    font-size: 3rem; /* Ajustado de 3.5rem para que no sea tan grande */
   }
 
   .period {
-    margin-top: 0;          /* Restaurar margen original */
+    margin-top: 0;
   }
-  /* --- Fin de lo agregado --- */
 }
+
+/* Responsive para 3 columnas en desktop, ajustando el gap */
+@media (min-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; /* Asegurar que el gap sea consistente */
+  }
+}
+
