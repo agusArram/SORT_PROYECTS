@@ -20,59 +20,40 @@ export class FeaturesComponent {
   protected readonly features: Feature[] = [
     {
       icon: '📦',
-      title: 'Gestión de Inventario Completa',
-      description: 'Crea y organiza tus productos con SKU únicos, nombres, descripciones, costos y precios de venta. Agrupa por categorías personalizables para encontrar lo que necesitas en segundos.',
-      benefit: 'Organización profesional sin esfuerzo'
+      title: 'Inventario Inteligente',
+      description: 'Registra productos, gestiona variantes (talle, color, peso) y recibe alertas automáticas cuando el stock llega al mínimo.',
+      benefit: 'Evita quiebres de stock y sabe qué tienes en tiempo real.'
     },
     {
-      icon: '🎨',
-      title: 'Variantes Inteligentes',
-      description: '¿Vendes ropa? ¿Calzado? ¿Productos con múltiples versiones? AppInventario permite crear variantes ilimitadas de un producto base (ej: Remera Roja Talle M, Remera Azul Talle L). Cada variante tiene su propio stock, precio y SKU.',
-      benefit: 'Control total sobre cada versión de tus productos',
-      isStarFeature: true
-    },
-    {
-      icon: '💳',
-      title: 'Punto de Venta Integrado',
-      description: 'Registra ventas en segundos. Selecciona productos o variantes específicas, calcula totales automáticamente, acepta múltiples medios de pago y asocia ventas a clientes. Todo desde una interfaz intuitiva.',
-      benefit: 'Atención más rápida = clientes más felices'
-    },
-    {
-      icon: '⚡',
-      title: 'Control de Stock Transaccional',
-      description: 'Cuando vendes, el stock se descuenta automáticamente de la variante correcta. ¿Anulaste una venta? El stock se restaura al instante. Olvídate de errores humanos y descuadres de inventario.',
-      benefit: 'Integridad de datos garantizada'
-    },
-    {
-      icon: '👥',
-      title: 'Base de Datos de Clientes',
-      description: 'Guarda información de tus clientes (nombre, DNI, teléfono, email, notas) y consulta el historial completo de compras. Construye relaciones a largo plazo y ofrece un servicio personalizado.',
-      benefit: 'CRM integrado sin complicaciones'
+      icon: '🧾',
+      title: 'Punto de Venta Ágil',
+      description: 'Un módulo diseñado para ser rápido. Registra transacciones, anula ventas (con restauración de stock) y asocia clientes en segundos.',
+      benefit: 'Menos tiempo en la caja, más tiempo atendiendo clientes.'
     },
     {
       icon: '📊',
-      title: 'Dashboard de Métricas en Tiempo Real',
-      description: 'Visualiza KPIs clave al instante: valor total de inventario, productos con stock bajo o sin stock, ventas del día y últimos 30 días, promedio de venta diaria, y gráficos de ventas por período y categoría.',
-      benefit: 'Sé exactamente cómo va tu negocio, siempre'
+      title: 'Dashboard y Métricas',
+      description: 'Gráficos claros que te muestran el valor de tu inventario, ventas diarias/mensuales y tu Top 10 de productos más vendidos.',
+      benefit: 'Toma decisiones con datos reales, no con suposiciones.'
     },
     {
-      icon: '💰',
+      icon: '📈',
       title: 'Análisis de Rentabilidad',
-      description: 'La mayoría de sistemas solo rastrean ventas. AppInventario va más allá: calcula tu ganancia real (Precio - Costo), margen promedio (%), y te muestra qué productos y categorías son realmente rentables.',
-      benefit: 'Maximiza ganancias, no solo ventas',
+      description: 'Descubre tu margen de ganancia real por cada producto y categoría. Optimiza tus precios y maximiza tus ingresos.',
+      benefit: 'Enfócate en vender lo que realmente te da más ganancia.'
+    },
+    {
+      icon: '💾',
+      title: 'Backup Local y Sincronización',
+      description: 'Tu inventario se respalda en una base de datos local (SQLite). Puedes consultar tus productos sin conexión y sincronizar los datos desde la nube.',
+      benefit: 'Tus datos están seguros y accesibles, estés donde estés.',
       isStarFeature: true
     },
     {
-      icon: '📄',
-      title: 'Reportes y Exportación Profesional',
-      description: 'Genera reportes de inventario y ventas exportables a PDF y Excel con un clic. Ideal para compartir con contadores, socios o simplemente para tu archivo personal.',
-      benefit: 'Documentación profesional sin esfuerzo'
-    },
-    {
-      icon: '🔄',
-      title: 'Actualizaciones Automáticas',
-      description: 'AppInventario incluye un sistema de licencias flexible y un actualizador automático que descarga e instala nuevas versiones sin intervención manual. Mejoras continuas sin interrupciones.',
-      benefit: 'Olvídate del mantenimiento técnico'
+      icon: '👥',
+      title: 'Gestión de Clientes',
+      description: 'Lleva un registro de tus clientes. Asocia ventas a sus perfiles y consulta su historial de compras para ofrecer un servicio personalizado.',
+      benefit: 'Fideliza a tus clientes conociendo qué te compran.'
     }
   ];
 }

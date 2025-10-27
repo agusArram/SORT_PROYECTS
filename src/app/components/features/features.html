@@ -2,17 +2,15 @@
   <div class="features-container">
     <!-- Section Header -->
     <div class="section-header">
-      <div class="section-badge">
+      <span class="section-badge">
         <span class="badge-dot"></span>
-        <span class="badge-text">Características</span>
-      </div>
+        AppInventario v2.3
+      </span>
       <h2 class="section-title">
-        Todo lo que necesitas para<br>
-        <span class="title-gradient">gestionar tu negocio</span>
+        Tu negocio <span class="title-gradient">merece</span> una gestión simple y potente
       </h2>
       <p class="section-subtitle">
-        Pensado específicamente para comercios que necesitan precisión,
-        velocidad y control total sobre su inventario y rentabilidad.
+        Desde el control de stock hasta el análisis de ganancias, AppInventario reemplaza tus planillas por una solución moderna que entiende a los comercios.
       </p>
     </div>
 
@@ -31,14 +29,16 @@
             </div>
           }
 
-          <!-- Icon -->
-          <div class="feature-icon">
-            {{ feature.icon }}
-          </div>
-
           <!-- Content -->
           <div class="feature-content">
-            <h3 class="feature-title">{{ feature.title }}</h3>
+            <!-- *** NUEVO HEADER PARA ALINEAR ÍCONO Y TÍTULO *** -->
+            <div class="feature-header">
+              <span class="feature-icon">
+                {{ feature.icon }}
+              </span>
+              <h3 class="feature-title">{{ feature.title }}</h3>
+            </div>
+
             <p class="feature-description">{{ feature.description }}</p>
             <div class="feature-benefit">
               <svg class="benefit-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -76,3 +76,4 @@
     </div>
   </div>
 </section>
+
