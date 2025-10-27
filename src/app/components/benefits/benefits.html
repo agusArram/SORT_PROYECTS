@@ -13,9 +13,14 @@
       <!-- Bucle actualizado a @for -->
       @for (benefit of benefits; track $index) {
         <article class="benefit-card">
-          <div class="benefit-icon">{{ benefit.icon }}</div>
-          <h3 class="benefit-title">{{ benefit.title }}</h3>
+          <!-- *** CONTENIDO ACTUALIZADO *** -->
+          <!-- Agrupamos ícono y título en un nuevo 'benefit-header' -->
+          <div class="benefit-header">
+            <span class="benefit-icon">{{ benefit.icon }}</span>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+          </div>
           <p class="benefit-description">{{ benefit.description }}</p>
+          <!-- El div de ícono separado se elimina -->
         </article>
       }
     </div>
