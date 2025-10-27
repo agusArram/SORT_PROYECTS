@@ -1,44 +1,37 @@
 <section id="caracteristicas" class="features">
   <div class="features-container">
-    <!-- Section Header -->
+    <!-- Section Header (igual) -->
     <div class="section-header">
       <span class="section-badge">
         <span class="badge-dot"></span>
-        SortProject v2.3
+        AppInventario v2.3
       </span>
       <h2 class="section-title">
         Tu negocio <span class="title-gradient">merece</span> una gestión simple y potente
       </h2>
       <p class="section-subtitle">
-        Desde el control de stock hasta el análisis de ganancias, SortProject reemplaza tus planillas por una solución moderna que entiende a los comercios.
+        Desde el control de stock hasta el análisis de ganancias, AppInventario reemplaza tus planillas por una solución moderna que entiende a los comercios.
       </p>
     </div>
 
-    <!-- Features Grid -->
+    <!-- Features Grid (igual) -->
     <div class="features-grid">
-      <!-- Bucle actualizado a @for -->
       @for (feature of features; track feature.title) {
         <article
           class="feature-card"
           [class.star-feature]="feature.isStarFeature">
-
-          <!-- Condicional actualizado a @if -->
           @if (feature.isStarFeature) {
             <div class="star-badge">
               ⭐ Diferenciador
             </div>
           }
-
-          <!-- Content -->
           <div class="feature-content">
-            <!-- *** NUEVO HEADER PARA ALINEAR ÍCONO Y TÍTULO *** -->
             <div class="feature-header">
               <span class="feature-icon">
                 {{ feature.icon }}
               </span>
               <h3 class="feature-title">{{ feature.title }}</h3>
             </div>
-
             <p class="feature-description">{{ feature.description }}</p>
             <div class="feature-benefit">
               <svg class="benefit-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -51,29 +44,6 @@
       }
     </div>
 
-    <!-- Bottom CTA -->
-    <div class="features-cta">
-      <div class="cta-card">
-        <h3 class="cta-title">Diseñado para comercios reales, no para hojas de cálculo</h3>
-        <p class="cta-text">
-          SortProject fue creado por desarrolladores que entienden las necesidades
-          de los comercios minoristas. Olvídate de Excel, cuadernos y sistemas
-          complicados. Todo lo que necesitas, en una aplicación potente y fácil de usar.
-
-        </p>
-        <h3 class="cta-title">Vende sin interrupciones</h3>
-        <p class="cta-text">
-          Diseñado para el mundo real. Si tu local tiene mal Wi-Fi o estás en una feria,
-          el sistema sigue registrando ventas. No dependes 100% de la nube para que tu negocio siga funcionando.
-        </p>
-        <button class="cta-button">
-          Comenzar Ahora
-          <svg class="btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-        </button>
-      </div>
-    </div>
   </div>
 </section>
 
