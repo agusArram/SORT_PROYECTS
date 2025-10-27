@@ -78,4 +78,6 @@ export class HeaderComponent implements OnInit {
     this.closeMenu();
     this.router.navigate([ruta]);
   }
+
+
 }

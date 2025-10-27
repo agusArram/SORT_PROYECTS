@@ -36,8 +36,8 @@
         <h4 class="footer-title">Navegación</h4>
         <ul class="footer-links">
           <li><a (click)="scrollToSection('inicio')" class="footer-link">Inicio</a></li>
-          <li><a (click)="scrollToSection('caracteristicas')" class="footer-link">Características</a></li>
           <li><a (click)="scrollToSection('beneficios')" class="footer-link">Beneficios</a></li>
+          <li><a (click)="scrollToSection('caracteristicas')" class="footer-link">Características</a></li>
           <li><a (click)="scrollToSection('precios')" class="footer-link">Precios</a></li>
         </ul>
       </div>
@@ -46,7 +46,7 @@
       <div class="footer-section">
         <h4 class="footer-title">Producto</h4>
         <ul class="footer-links">
-          <li><a href="#" class="footer-link">Descargar Demo</a></li>
+          <li><a href="https://github.com/agusArram/AppInventario/releases/download/v2.3.2/AppInventario.zip" class="footer-link">Descargar Demo</a></li>
           <li><a href="#" class="footer-link">Documentación</a></li>
           <li><a href="#" class="footer-link">Tutoriales</a></li>
           <li><a href="#" class="footer-link">Actualizaciones</a></li>
@@ -57,10 +57,12 @@
       <div class="footer-section">
         <h4 class="footer-title">Soporte</h4>
         <ul class="footer-links">
+          <li><a routerLink="/contacto" class="footer-link">Contacto</a></li>
+          <!--
           <li><a href="#" class="footer-link">Centro de Ayuda</a></li>
-          <li><a href="#" class="footer-link">Contacto</a></li>
           <li><a href="#" class="footer-link">Reportar Bug</a></li>
           <li><a href="#" class="footer-link">Solicitar Feature</a></li>
+          -->
         </ul>
       </div>
     </div>
@@ -69,13 +71,15 @@
     <div class="footer-bottom">
       <div class="footer-bottom-content">
         <p class="copyright">
-          © {{ currentYear }} Arrambide Tech. Desarrollado por Agustín Arrambide. Todos los derechos reservados.
+          © {{ currentYear }} Arrambide Tech. Desarrollado por Agustín Arrambide.
         </p>
+        <!--
         <div class="footer-bottom-links">
           <a href="#" class="bottom-link">Términos de Servicio</a>
           <span class="separator">•</span>
           <a href="#" class="bottom-link">Política de Privacidad</a>
         </div>
+        -->
       </div>
     </div>
   </div>
