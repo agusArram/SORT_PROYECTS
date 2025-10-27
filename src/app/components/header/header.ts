@@ -1,4 +1,4 @@
-import { Component, signal, OnInit, effect, Renderer2, Inject } from '@angular/core';
+import { Component, signal, OnInit, effect, Renderer2, Inject, HostListener } from '@angular/core';
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
@@ -33,8 +33,22 @@ export class HeaderComponent implements OnInit {
     this.isDarkMode.set(initialTheme === 'dark');
   }
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.isMenuOpen()) return;
+
+    const target = event.target as HTMLElement;
+    const mobileMenu = this.document.querySelector('.mobile-menu');
+    const mobileMenuBtn = this.document.querySelector('.mobile-menu-btn');
+
+    if (!mobileMenu?.contains(target) && !mobileMenuBtn?.contains(target)) {
+      this.closeMenu();
+    }
+  }
+
   toggleTheme(): void {
     this.isDarkMode.update(value => !value);
+    this.closeMenu();
   }
 
   toggleMenu(): void {
