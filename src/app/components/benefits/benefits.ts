@@ -23,7 +23,7 @@ export class BenefitsComponent {
     },
     {
       title: 'Modo Híbrido (Online/Offline)',
-      description: 'Nunca pierdas una venta. AppInventario sigue operando de forma local aunque se caiga internet. Tus datos se guardan al instante y se sincronizan con la nube automáticamente cuando recuperas la conexión.',
+      description: 'Nunca pierdas una venta. SortProject sigue operando de forma local aunque se caiga internet. Tus datos se guardan al instante y se sincronizan con la nube automáticamente cuando recuperas la conexión.',
       icon: '🔄' // Cambiado a Sincronización/Ciclo
     },
     {
