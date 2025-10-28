@@ -79,7 +79,7 @@
   border-radius: 16px;
   padding: 1.5rem; /* <-- Compacto */
   transition: all 0.3s ease;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
 }
@@ -98,8 +98,12 @@
 }
 .star-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: -15px;      /* Mueve la etiqueta 15px por encima del borde superior de la tarjeta */
+  left: 50%;       /* Posiciona el borde izquierdo de la etiqueta en el centro horizontal de la tarjeta */
+  transform: translateX(-50%); /* Mueve la etiqueta hacia la izquierda la mitad de su propio ancho para centrarla */
+  /* --- FIN NUEVAS LÍNEAS --- */
+
+  /* El resto de estilos se mantienen igual */
   background: var(--accent-primary);
   color: var(--bg-primary);
   padding: 0.4rem 0.8rem;
