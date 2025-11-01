@@ -1,0 +1,123 @@
+/* =================================
+   ESTILOS GENERALES Y TÍTULO
+   ================================= */
+.showcase-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.slider-container,
+.video-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.slider-container h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #4F46E5, #A855F7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-align: center;
+}
+
+/* =================================
+   ESTILOS SLIDER PRINCIPAL (chico)
+   ================================= */
+
+/* Regla específica para los slides DEL CONTENEDOR PRINCIPAL */
+.slider-container swiper-slide {
+  background-color: #f9f9f9; /* Fondo gris claro */
+  border-radius: 8px;
+  cursor: pointer; /* Indica que es clickeable */
+}
+
+/* Regla específica para las imágenes DEL CONTENEDOR PRINCIPAL */
+.slider-container swiper-slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1940 / 1000; /* Tu proporción */
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+/* =================================
+   ESTILOS LIGHTBOX (galería grande)
+   ================================= */
+
+/* El fondo oscuro que cubre todo */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85); /* <-- ¡EL FONDO NEGRITO LINDO! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* El botón de cerrar (X) */
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1010; /* Por encima del swiper */
+  outline: none;
+}
+
+/* Contenedor del Swiper dentro del Lightbox */
+.lightbox-swiper {
+  width: 100%;
+  height: 100%;
+  background: transparent; /* Fondo transparente para que se vea el overlay */
+
+  /* Flechas y puntos BLANCOS */
+  --swiper-navigation-color: #ffffff;
+  --swiper-pagination-color: #ffffff;
+}
+
+/* El slide dentro del lightbox (AHORA SÓLO PONE EL FONDO) */
+.lightbox-swiper swiper-slide {
+  background: transparent;
+  /* El flexbox va en el div de adentro, no acá */
+}
+
+/* El div DENTRO del slide (ESTE ES EL QUE CENTRA LA IMAGEN) */
+.lightbox-slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* La imagen final dentro del lightbox */
+.lightbox-image {
+  max-width: 95%;   /* Máximo 95% del ancho */
+  max-height: 95%;  /* Máximo 95% del alto */
+  object-fit: contain;
+}
+
+/* Animación simple de Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

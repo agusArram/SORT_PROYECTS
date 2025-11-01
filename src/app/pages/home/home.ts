@@ -5,6 +5,7 @@ import { FeaturesComponent } from '../../components/features/features';
 import { BenefitsComponent } from '../../components/benefits/benefits';
 import { PricingComponent } from '../../components/pricing/pricing';
 import { FooterComponent } from '../../components/footer/footer';
+import {ProductShowcaseComponent } from '../../components/product-showcase/product-showcase';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ import { FooterComponent } from '../../components/footer/footer';
     FeaturesComponent,
     BenefitsComponent,
     PricingComponent,
-    FooterComponent
+    FooterComponent,
+    ProductShowcaseComponent
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'
