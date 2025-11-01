@@ -12,49 +12,40 @@
       allow-touch-move="true"
       autoplay-disable-on-interaction="false">
 
-      <swiper-slide
-        *ngFor="let foto of fotosProducto; let i = index"
-        (click)="openImage(i)"
-        class="clickable">
-        <img [src]="foto" alt="Muestra del producto">
-      </swiper-slide>
+      @for (foto of fotosProducto; track foto; let i = $index) {
+        <swiper-slide
+          (click)="openImage(i)"
+          class="clickable">
+          <img [src]="foto" alt="Muestra del producto">
+        </swiper-slide>
+      }
 
     </swiper-container>
   </div>
 
-  <div
-    *ngIf="isLightboxOpen"
-    class="lightbox-overlay"
-    (click)="checkOverlayClick($event)"> <button class="lightbox-close" (click)="closeImage()">&times;</button>
+  @if (isLightboxOpen) {
+    <div
+      class="lightbox-overlay"
+      (click)="closeImage()"> <button class="lightbox-close" (click)="closeImage()">&times;</button>
 
-    <swiper-container
-      class="lightbox-swiper"
-      initial-slide="{{initialSlideIndex}}"
-      navigation="true"
-      pagination="true"
-      pagination-clickable="true"
-      allow-touch-move="true"
-      loop="true">
+      <swiper-container
+        class="lightbox-swiper"
+        (click)="$event.stopPropagation()" initial-slide="{{initialSlideIndex}}"
+        navigation="true"
+        pagination="true"
+        pagination-clickable="true"
+        allow-touch-move="true">
+        @for (foto of fotosProducto; track foto) {
+          <swiper-slide>
+            <div class="lightbox-slide-content">
+              <img [src]="foto" alt="Vista ampliada" class="lightbox-image">
+            </div>
+          </swiper-slide>
+        }
 
-      <swiper-slide *ngFor="let foto of fotosProducto">
-        <div class="lightbox-slide-content">
-          <img [src]="foto" alt="Vista ampliada" class="lightbox-image">
-        </div>
-      </swiper-slide>
+      </swiper-container>
 
-    </swiper-container>
+    </div>
+  }
 
-  </div>
-
-
-<!--
-  <div class="video-container">
-    <h3>El potencial de tu negocio</h3>
-
-    <youtube-player
-      [videoId]="videoId"
-      width="100%">
-    </youtube-player>
-  </div>
--->
 </section>

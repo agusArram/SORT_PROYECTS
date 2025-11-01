@@ -44,8 +44,8 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1940 / 1000; /* Tu proporción */
-  border-radius: 15px;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 /* =================================
@@ -59,7 +59,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.85); /* <-- ¡EL FONDO NEGRITO LINDO! */
+  background: rgba(0, 0, 0, 0.85); /* El fondo negro */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,17 +87,16 @@
 .lightbox-swiper {
   width: 100%;
   height: 100%;
-  background: transparent; /* Fondo transparente para que se vea el overlay */
+  background: transparent; /* Fondo transparente */
 
   /* Flechas y puntos BLANCOS */
   --swiper-navigation-color: #ffffff;
   --swiper-pagination-color: #ffffff;
 }
 
-/* El slide dentro del lightbox (AHORA SÓLO PONE EL FONDO) */
+/* El slide dentro del lightbox */
 .lightbox-swiper swiper-slide {
   background: transparent;
-  /* El flexbox va en el div de adentro, no acá */
 }
 
 /* El div DENTRO del slide (ESTE ES EL QUE CENTRA LA IMAGEN) */

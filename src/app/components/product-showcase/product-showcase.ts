@@ -28,9 +28,7 @@ export class ProductShowcaseComponent {
     'assets/App/Rentabilidad.webp',
   ];
 
-  // --- LIMPIEZA ---
-  // Borramos la variable 'selectedImage' que ya no se usa.
-
+  // Variables de estado para el Lightbox
   isLightboxOpen: boolean = false;
   initialSlideIndex: number = 0;
 
@@ -50,13 +48,12 @@ export class ProductShowcaseComponent {
   }
 
   /**
-   * --- FUNCIÓN NUEVA ---
+   * --- FUNCIÓN CLAVE ---
    * Cierra el lightbox SÓLO si se clickea el fondo gris (el overlay),
    * y no un hijo (como la imagen o el swiper).
    */
   checkOverlayClick(event: MouseEvent): void {
-    // event.currentTarget es el div 'lightbox-overlay' (el que tiene el listener)
-    // event.target es el elemento exacto donde se hizo click (ej: la <img>)
+    // Comprueba si el elemento clickeado es el overlay mismo
     if (event.target === event.currentTarget) {
       this.isLightboxOpen = false;
     }
